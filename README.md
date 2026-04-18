@@ -5,17 +5,17 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/your-username/sebi-it-prep/stargazers">
-    <img src="https://img.shields.io/github/stars/your-username/sebi-it-prep?style=for-the-badge" />
+  <a href="https://github.com/Vish1811/SebiGradeAExamPrep/stargazers">
+    <img src="https://img.shields.io/github/stars/Vish1811/SebiGradeAExamPrep?style=for-the-badge" />
   </a>
-  <a href="https://github.com/your-username/sebi-it-prep/network">
-    <img src="https://img.shields.io/github/forks/your-username/sebi-it-prep?style=for-the-badge" />
+  <a href="https://github.com/Vish1811/SebiGradeAExamPrep/network">
+    <img src="https://img.shields.io/github/forks/Vish1811/SebiGradeAExamPrep?style=for-the-badge" />
   </a>
-  <a href="https://github.com/your-username/sebi-it-prep/issues">
-    <img src="https://img.shields.io/github/issues/your-username/sebi-it-prep?style=for-the-badge" />
+  <a href="https://github.com/Vish1811/SebiGradeAExamPrep/issues">
+    <img src="https://img.shields.io/github/issues/Vish1811/SebiGradeAExamPrep?style=for-the-badge" />
   </a>
-  <a href="https://github.com/your-username/sebi-it-prep/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/your-username/sebi-it-prep?style=for-the-badge" />
+  <a href="https://github.com/Vish1811/SebiGradeAExamPrep/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Vish1811/SebiGradeAExamPrep?style=for-the-badge" />
   </a>
 </p>
 
@@ -27,12 +27,23 @@
 
 ---
 
+## 🎯 Quick Access
+
+| Link | Description |
+|------|------------|
+| 🌐 [Live Demo](https://vish1811.github.io/SebiGradeAExamPrep/) | Access the interactive dashboard online |
+| 📂 [Repository](https://github.com/Vish1811/SebiGradeAExamPrep) | View source code on GitHub |
+| ⭐ [Star This Repo](https://github.com/Vish1811/SebiGradeAExamPrep/stargazers) | Show your support |
+| 🐛 [Report Issues](https://github.com/Vish1811/SebiGradeAExamPrep/issues) | Help improve this project |
+
+---
+
 ## 🌐 Live Demo
 
 🚀 **Try it here:**  
-👉 https://your-live-demo-link.com  
+👉 https://vish1811.github.io/SebiGradeAExamPrep/  
 
-*(Tip: Deploy using GitHub Pages or Vercel)*
+*(This repository uses GitHub Pages for live hosting)*
 
 ---
 
@@ -88,8 +99,8 @@ sebi-it-prep/
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/sebi-it-prep.git
-cd sebi-it-prep
+git clone https://github.com/Vish1811/SebiGradeAExamPrep.git
+cd SebiGradeAExamPrep
 ```
 
 ### 2️⃣ Run Locally
