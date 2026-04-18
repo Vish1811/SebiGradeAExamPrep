@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEBI Grade A — IT Stream Complete Prep Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050d14;
+  --surface: #0b1825;
+  --surface2: #0f2030;
+  --border: #1a3550;
+  --accent: #00d4ff;
+  --green: #00ff9d;
+  --orange: #ff8c42;
+  --red: #ff4d6d;
+  --yellow: #ffd166;
+  --text: #e2eaf4;
+  --muted: #5c7a96;
+  --dim: #2a4560;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:14px;line-height:1.7;overflow-x:hidden;}
+
+/* ── SCANLINES TEXTURE ── */
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,212,255,0.015) 2px,rgba(0,212,255,0.015) 4px);pointer-events:none;z-index:0;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(5,13,20,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;gap:0;overflow-x:auto;}
+.nav-logo{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--accent);padding:14px 20px 14px 0;border-right:1px solid var(--border);margin-right:8px;white-space:nowrap;flex-shrink:0;}
+.nav-logo span{color:var(--green);}
+nav a{color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:1px;padding:14px 14px;white-space:nowrap;transition:color .2s;border-bottom:2px solid transparent;}
+nav a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+
+/* ── HERO ── */
+.hero{position:relative;padding:80px 0 64px;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:40px 40px;opacity:0.3;}
+.hero-glow{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(0,212,255,0.12) 0%,transparent 70%);pointer-events:none;}
+.container{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--green);border:1px solid rgba(0,255,157,0.3);padding:5px 14px;margin-bottom:24px;}
+.hero-tag::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.4);}}
+
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(36px,6vw,72px);font-weight:800;line-height:1.0;letter-spacing:-2px;margin-bottom:8px;}
+.hero h1 .line1{display:block;color:var(--text);}
+.hero h1 .line2{display:block;color:var(--accent);}
+.hero h1 .line3{display:block;color:var(--muted);font-size:0.55em;letter-spacing:0px;font-weight:600;margin-top:4px;}
+
+.hero-desc{margin-top:20px;max-width:560px;color:var(--muted);font-size:13px;line-height:1.8;}
+
+.hero-stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;}
+.stat-box{background:var(--surface);border:1px solid var(--border);padding:14px 20px;min-width:140px;}
+.stat-box .sv{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--accent);}
+.stat-box .sl{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+
+/* ── SECTION SYSTEM ── */
+section{padding:64px 0 56px;border-top:1px solid var(--border);}
+.sec-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;margin-bottom:6px;line-height:1.2;}
+.sec-title .hl{color:var(--green);}
+.sec-sub{color:var(--muted);font-size:13px;margin-bottom:36px;max-width:600px;}
+
+/* ── EXAM STRUCTURE ── */
+.phase-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+@media(max-width:640px){.phase-row{grid-template-columns:1fr;}}
+.phase-block{background:var(--surface);border:1px solid var(--border);padding:24px;}
+.phase-block.highlight{border-color:var(--accent);background:linear-gradient(135deg,var(--surface) 0%,rgba(0,212,255,0.05) 100%);}
+.phase-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.phase-header h3{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;}
+.phase-chip{font-size:10px;padding:3px 10px;background:rgba(0,212,255,0.1);color:var(--accent);border:1px solid rgba(0,212,255,0.3);}
+.phase-chip.green{background:rgba(0,255,157,0.1);color:var(--green);border-color:rgba(0,255,157,0.3);}
+.phase-chip.orange{background:rgba(255,140,66,0.1);color:var(--orange);border-color:rgba(255,140,66,0.3);}
+.info-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:12.5px;}
+.info-row:last-child{border:none;}
+.info-row .label{color:var(--muted);}
+.info-row .val{color:var(--text);font-weight:500;}
+.info-row .val.accent{color:var(--accent);}
+.info-row .val.green{color:var(--green);}
+.info-row .val.red{color:var(--red);}
+
+/* ── SYLLABUS TABS ── */
+.tab-bar{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--border);margin-bottom:28px;}
+.tab-btn{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;padding:10px 18px;background:none;border:none;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;text-transform:uppercase;}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+.tab-btn:hover{color:var(--text);}
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+
+/* ── TOPIC CARDS ── */
+.topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
+.topic-card{background:var(--surface);border:1px solid var(--border);padding:20px 22px;transition:border-color .2s,transform .15s;}
+.topic-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+.tc-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.tc-icon{font-size:20px;}
+.tc-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;}
+.tc-weight{font-size:10px;padding:2px 8px;margin-left:auto;background:rgba(0,212,255,0.08);color:var(--accent);border:1px solid rgba(0,212,255,0.2);}
+.tc-weight.high{background:rgba(0,255,157,0.08);color:var(--green);border-color:rgba(0,255,157,0.25);}
+.subtopic-list{list-style:none;padding:0;}
+.subtopic-list li{font-size:12px;color:var(--muted);padding:3px 0 3px 14px;position:relative;border-bottom:1px solid rgba(26,53,80,0.5);}
+.subtopic-list li:last-child{border:none;}
+.subtopic-list li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:9px;top:4px;}
+.subtopic-list li .key{color:var(--yellow);}
+
+/* ── MIND MAP SVG ── */
+.mindmap-container{background:var(--surface);border:1px solid var(--border);padding:24px;overflow-x:auto;}
+
+/* ── RESOURCES SECTION ── */
+.res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.res-card{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--accent);padding:20px;}
+.res-card.g{border-top-color:var(--green);}
+.res-card.o{border-top-color:var(--orange);}
+.res-card.y{border-top-color:var(--yellow);}
+.res-card h4{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:14px;color:var(--accent);}
+.res-card.g h4{color:var(--green);}
+.res-card.o h4{color:var(--orange);}
+.res-card.y h4{color:var(--yellow);}
+.res-list{list-style:none;padding:0;}
+.res-list li{font-size:12.5px;color:var(--muted);padding:5px 0;border-bottom:1px solid var(--border);display:flex;flex-direction:column;}
+.res-list li:last-child{border:none;}
+.res-list li .rt{color:var(--text);font-size:12.5px;}
+.res-list li .rs{font-size:10px;color:var(--dim);margin-top:1px;}
+
+/* ── STUDY PLAN ── */
+.plan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.plan-card{background:var(--surface);border:1px solid var(--border);padding:20px;}
+.plan-week{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:6px;}
+.plan-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:10px;}
+.plan-list{list-style:none;padding:0;}
+.plan-list li{font-size:12px;color:var(--muted);padding:4px 0 4px 14px;position:relative;}
+.plan-list li::before{content:'→';position:absolute;left:0;color:var(--green);font-size:10px;}
+
+/* ── TIPS SECTION ── */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
+.tip{background:var(--surface2);border:1px solid var(--border);padding:22px;}
+.tip-n{font-family:'Syne',sans-serif;font-size:42px;font-weight:800;color:var(--dim);line-height:1;margin-bottom:10px;}
+.tip h4{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;}
+.tip p{font-size:12px;color:var(--muted);line-height:1.7;}
+
+/* ── DAILY SCHEDULE ── */
+.schedule{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+.sched-block{background:var(--surface);border:1px solid var(--border);padding:16px;}
+.sched-time{font-size:10px;color:var(--accent);letter-spacing:1px;margin-bottom:6px;}
+.sched-act{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:4px;}
+.sched-det{font-size:11px;color:var(--muted);}
+
+/* ── IMPORTANT TOPICS HIGHLIGHT ── */
+.hot-topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:24px;}
+.hot-tag{background:var(--surface2);border:1px solid var(--dim);padding:10px 14px;font-size:12px;display:flex;align-items:center;gap:8px;transition:border-color .2s;}
+.hot-tag:hover{border-color:var(--green);}
+.hot-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;}
+.hot-tag .dot.red{background:var(--red);}
+.hot-tag .dot.yellow{background:var(--yellow);}
+
+/* ── SAMPLE Q FORMAT ── */
+.sample-q{background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--accent);padding:18px 20px;margin-bottom:12px;}
+.sq-label{font-size:10px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.sq-q{font-family:'Lora',serif;font-size:14px;color:var(--text);margin-bottom:12px;line-height:1.6;}
+.sq-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+@media(max-width:500px){.sq-opts{grid-template-columns:1fr;}}
+.sq-opt{font-size:12px;color:var(--muted);padding:6px 10px;background:var(--surface);border:1px solid var(--border);cursor:pointer;transition:all .2s;}
+.sq-opt:hover{border-color:var(--accent);color:var(--text);}
+.sq-opt.correct{border-color:var(--green);color:var(--green);background:rgba(0,255,157,0.06);}
+
+/* ── FOOTER ── */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 24px;text-align:center;font-size:11px;color:var(--dim);}
+footer strong{color:var(--accent);}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.hero>*{animation:fadeIn .5s ease forwards;}
+.hero>*:nth-child(2){animation-delay:.1s;opacity:0;}
+.hero>*:nth-child(3){animation-delay:.2s;opacity:0;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--dim);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">SEBI·IT <span>2025</span></div>
+  <a href="#overview">Overview</a>
+  <a href="#syllabus">Syllabus</a>
+  <a href="#mindmap">Mind Map</a>
+  <a href="#phase1">Phase I</a>
+  <a href="#phase2">Phase II</a>
+  <a href="#resources">Resources</a>
+  <a href="#plan">Study Plan</a>
+  <a href="#tips">Tips</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-tag">Complete One-Stop Guide</div>
+    <h1>
+      <span class="line1">SEBI Grade A</span>
+      <span class="line2">Information Technology</span>
+      <span class="line3">Officer 2025 — Full Preparation Hub</span>
+    </h1>
+    <p class="hero-desc">Everything you need to crack the SEBI Assistant Manager IT Stream exam — syllabus, strategy, resources, mind maps, mock question formats, and a day-by-day study plan.</p>
+    <div class="hero-stats">
+      <div class="stat-box"><div class="sv">22</div><div class="sl">IT Vacancies</div></div>
+      <div class="stat-box"><div class="sv">3</div><div class="sl">Phases</div></div>
+      <div class="stat-box"><div class="sv">100</div><div class="sl">Marks Each Paper</div></div>
+      <div class="stat-box"><div class="sv">50%</div><div class="sl">Phase II Cutoff</div></div>
+      <div class="stat-box"><div class="sv">Jan 10</div><div class="sl">Phase I Date</div></div>
+      <div class="stat-box"><div class="sv">Feb 21</div><div class="sl">Phase II Date</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ EXAM OVERVIEW ══════════ -->
+<section id="overview">
+  <div class="container">
+    <div class="sec-label">// section 01</div>
+    <h2 class="sec-title">Exam <span class="hl">Structure</span> — IT Stream</h2>
+    <p class="sec-sub">Three phases. Phase I is a qualifier; Phase II marks count for merit. Phase III is interview with 15% weightage.</p>
+
+    <div class="phase-row">
+      <div class="phase-block">
+        <div class="phase-header">
+          <h3>Phase I — Screening Exam</h3>
+          <span class="phase-chip">Jan 10, 2026</span>
+        </div>
+        <div class="info-row"><span class="label">Paper 1 — General Aptitude</span><span class="val accent">100 marks • 60 min</span></div>
+        <div class="info-row"><span class="label">Paper 2 — IT Specialized</span><span class="val accent">100 marks • 40 min</span></div>
+        <div class="info-row"><span class="label">Paper 1 Cutoff</span><span class="val">30% minimum</span></div>
+        <div class="info-row"><span class="label">Paper 2 Cutoff</span><span class="val">40% minimum</span></div>
+        <div class="info-row"><span class="label">Aggregate Cutoff</span><span class="val">40%</span></div>
+        <div class="info-row"><span class="label">Negative Marking</span><span class="val red">¼ mark per wrong MCQ</span></div>
+        <div class="info-row"><span class="label">Counts for Final Merit?</span><span class="val red">NO — only for shortlisting</span></div>
+        <div class="info-row"><span class="label">Paper 2 Type (IT)</span><span class="val">MCQ — DB, SQL, Java/C++, Python, Algorithms, Networks, Security, Shell</span></div>
+      </div>
+      <div class="phase-block highlight">
+        <div class="phase-header">
+          <h3>Phase II — Merit Exam ★</h3>
+          <span class="phase-chip green">Feb 21, 2026</span>
+        </div>
+        <div class="info-row"><span class="label">Paper 1 — English Descriptive</span><span class="val green">100 marks • 60 min</span></div>
+        <div class="info-row"><span class="label">Paper 2 — IT Advanced</span><span class="val green">100 marks • 180 min</span></div>
+        <div class="info-row"><span class="label">Paper 1 Weightage</span><span class="val">1/3rd of total</span></div>
+        <div class="info-row"><span class="label">Paper 2 Weightage</span><span class="val">2/3rd of total</span></div>
+        <div class="info-row"><span class="label">Aggregate Cutoff</span><span class="val green">50%</span></div>
+        <div class="info-row"><span class="label">Paper 2 Format (IT)</span><span class="val">MCQ — Logic flow, debugging, syntax, dry-run, data analysis (180 min)</span></div>
+        <div class="info-row"><span class="label">Shortlisting</span><span class="val">Top 3× vacancies = 66 candidates</span></div>
+        <div class="info-row"><span class="label">Counts for Final Merit?</span><span class="val green">YES — 85% weightage</span></div>
+      </div>
+    </div>
+
+    <div class="phase-row">
+      <div class="phase-block" style="border-color:var(--orange);">
+        <div class="phase-header">
+          <h3>Phase III — Interview</h3>
+          <span class="phase-chip orange">Dates TBA</span>
+        </div>
+        <div class="info-row"><span class="label">Phase II Marks Weightage</span><span class="val">85% of final score</span></div>
+        <div class="info-row"><span class="label">Interview Weightage</span><span class="val">15% of final score</span></div>
+        <div class="info-row"><span class="label">Medium</span><span class="val">Hindi or English</span></div>
+        <div class="info-row"><span class="label">Focus Areas</span><span class="val">SEBI functions, IT in capital markets, cybersecurity, current affairs, your profile</span></div>
+        <div class="info-row"><span class="label">Gross Salary (Mumbai)</span><span class="val green">~₹1,84,000/month</span></div>
+      </div>
+      <div class="phase-block">
+        <div class="phase-header">
+          <h3>Paper 1 — General Aptitude (All Phases)</h3>
+          <span class="phase-chip">Common</span>
+        </div>
+        <div class="info-row"><span class="label">General Awareness</span><span class="val">Financial sector, capital markets, current events</span></div>
+        <div class="info-row"><span class="label">English Language</span><span class="val">Reading comprehension, grammar, vocabulary</span></div>
+        <div class="info-row"><span class="label">Quantitative Aptitude</span><span class="val">Arithmetic, DI, number systems, percentages</span></div>
+        <div class="info-row"><span class="label">Test of Reasoning</span><span class="val">Logical, analytical, verbal, puzzles</span></div>
+        <div class="info-row"><span class="label">Strategy</span><span class="val accent">Just qualify — focus energy on Paper 2</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SYLLABUS ══════════ -->
+<section id="syllabus">
+  <div class="container">
+    <div class="sec-label">// section 02</div>
+    <h2 class="sec-title">Complete <span class="hl">Syllabus</span> Breakdown</h2>
+    <p class="sec-sub">Phase I has 9 topics. Phase II goes deeper into algorithms, data structures, string manipulation, and OOP. Both phases covered below.</p>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('phase1-syl','this',event)">Phase I — IT Paper</button>
+      <button class="tab-btn" onclick="switchTab('phase2-syl','this',event)">Phase II — IT Paper</button>
+      <button class="tab-btn" onclick="switchTab('paper1-syl','this',event)">Paper 1 — Aptitude</button>
+    </div>
+
+    <!-- PHASE I SYLLABUS -->
+    <div id="phase1-syl" class="tab-content active">
+      <div class="topic-grid">
+
+        <div class="topic-card">
+          <div class="tc-header"><span class="tc-icon">🗄️</span><span class="tc-title">Database Concepts</span><span class="tc-weight">10%</span></div>
+          <ul class="subtopic-list">
+            <li><span class="key">ER Model</span> — entities, attributes, relationships, cardinality</li>
+            <li><span class="key">Relational Model</span> — relational algebra, tuple calculus</li>
+            <li><span class="key">Integrity Constraints</span> — primary key, foreign key, domain, referential</li>
+            <li><span class="key">Normal Forms</span> — 1NF, 2NF, 3NF, BCNF with examples</li>
+            <li><span class="key">File Organization</span> — sequential, indexed, hashed</li>
+            <li><span class="key">Indexing</span> — B-trees, B+ trees, dense vs sparse index</li>
+            <li><span class="key">Transactions</span> — ACID properties, serializability</li>
+            <li><span class="key">Concurrency Control</span> — locking protocols, deadlock</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <div class="tc-header"><span class="tc-icon">🔍</span><span class="tc-title">SQL Queries</span><span class="tc-weight">10%</span></div>
+          <ul class="subtopic-list">
+            <li><span class="key">DDL</span> — CREATE, ALTER, DROP, TRUNCATE</li>
+            <li><span class="key">DML</span> — SELECT, INSERT, UPDATE, DELETE</li>
+            <li><span class="key">Joins</span> — INNER, LEFT, RIGHT, FULL OUTER, SELF, CROSS</li>
+            <li><span class="key">Aggregate Functions</span> — COUNT, SUM, AVG, MAX, MIN with GROUP BY / HAVING</li>
+            <li><span class="key">Set Operations</span> — UNION, INTERSECT, EXCEPT</li>
+            <li><span class="key">Subqueries</span> — IN, EXISTS, correlated subqueries</li>
+            <li><span class="key">Views</span> — creation, updatable views, materialized views</li>
+            <li><span class="key">Nested Queries</span> — multi-level SELECT with conditions</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <div class="tc-header"><span class="tc-icon">💻</span><span class="tc-title">Programming — Java / C / C++</span><span class="tc-weight high">30%</span></div>
+          <ul class="subtopic-list">
+            <li><span class="key">Program Control</span> — iteration, recursion, function calls</li>
+            <li><span class="key">Scope & Binding</span> — variable scope, static vs dynamic binding</li>
+            <li><span class="key">Parameter Passing</span> — pass by value vs reference, pointers in C</li>
+            <li><span class="key">OOP Concepts</span> — encapsulation, abstraction, polymorphism, inheritance</li>
+            <li><span class="key">Java Specifics</span> — JVM, class hierarchy, interfaces, abstract classes</li>
+            <li><span class="key">Constructors</span> — default, parameterized, copy constructor, constructor chaining</li>
+            <li><span class="key">Exception Handling</span> — try/catch/finally, custom exceptions, checked vs unchecked</li>
+            <li><span class="key">Functional Programming</span> — lambda basics, pure functions concept</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <div class="tc-header"><span class="tc-icon">🐍</span><span class="tc-title">Data Analytics — Python / R</span><span class="tc-weight">10%</span></div>
+          <ul class="subtopic-list">
+            <li><span class="key">Python Basics</span> — lists, tuples, sets, dictionaries, comprehensions</li>
+            <li><span class="key">Regex</span> — pattern matching, re module, search/match/findall</li>
+            <li><span class="key">Pandas</span> — DataFrames, slicing, groupby, merge, pivot, reshape</li>
+            <li><span class="key">NumPy</span> — arrays, broadcasting, vectorization</li>
+            <li><span class="key">File Management</span> — reading/writing CSV, JSON, Excel using Python</li>
+            <li><span class="key">Classes & Functions</span> — OOP in Python, decorators, generators</li>
+            <li><span class="key">Data Mining</span> — basic concepts of classification, clustering</li>
+            <li><span class="key">Visualization</span> — charts/graphs using matplotlib/seaborn concepts</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <div class="tc-header"><span class="tc-icon">⚙️</span><span class="tc-title">Algorithms for Problem Solving</span><span class="tc-weight">10%</span></div>
+          <ul class="subtopic-list">
+            <li><span class="key">Tree Traversals</span> — inorder, preorder, postorder, BFS, DFS</li>
+            <li><span class="key">Graph Algorithms</span> — BFS, DFS, connected components</li>
+            <li><span class="key">Spanning Trees</span> — Kruskal's, Prim's MST algorithms</li>
+            <li><span class="key">Shortest Path</span> — Dijkstra's, Bellman-Ford, Floyd-Warshall</li>
+            <li><span class="key">Hashing</span> — hash functions, collision handling (chaining, open addressing)</li>
+            <li><span class="key">Sorting</span> — QuickSort, MergeSort, HeapSort, time complexities</li>
+            <li><span class="key">Searching</span> — binary search, interpolation search</li>
+            <li><span class="key">Design Techniques</span> — Greedy, Dynamic Programming, Divide and Conquer</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <div class="tc-header"><span class="tc-icon">🌐</span><span class="tc-title">Networking Concepts</span><span class="tc-weight">10%</span></div>
+          <ul class="subtopic-list">
+            <li><span class="key">OSI Model</span> — all 7 layers, functions, protocols at each layer</li>
+            <li><span class="key">TCP/IP Stack</span> — TCP vs UDP, IP addressing, subnetting</li>
+            <li><span class="key">LAN Technologies</span> — Ethernet (CSMA/CD), Token Ring</li>
+            <li><span class="key">Application Protocols</span> — DNS, SMTP, POP3, IMAP, FTP, HTTP/HTTPS</li>
+            <li><span class="key">Network Devices</span> — Hub, Switch, Router, Bridge, Gateway</li>
+            <li><span class="key">Firewalls</span> — packet filtering, stateful inspection, proxy</li>
+            <li><span class="key">IP Classes</span> — Class A/B/C, CIDR, NAT, private/public IPs</li>
+            <li><span class="key">Routing Protocols</span> — RIP, OSPF, BGP concepts</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <div class="tc-header"><span class="tc-icon">🔐</span><span class="tc-title">Information & Cyber Security</span><span class="tc-weight">10%</span></div>
+          <ul class="subtopic-list">
+            <li><span class="key">CIA Triad</span> — Confidentiality, Integrity, Availability in depth</li>
+            <li><span class="key">Cyber Attacks</span> — phishing, DDoS, ransomware, MITM, SQL injection, XSS</li>
+            <li><span class="key">Authentication</span> — MFA, biometrics, tokens, OAuth, Kerberos</li>
+            <li><span class="key">Cryptography</span> — symmetric (AES, DES), asymmetric (RSA), hashing (SHA)</li>
+            <li><span class="key">PKI</span> — digital certificates, CA, SSL/TLS handshake</li>
+            <li><span class="key">Network Security</span> — IDS/IPS, VPN, DMZ, honeypots</li>
+            <li><span class="key">Software Development Security</span> — SDLC security, OWASP Top 10</li>
+            <li><span class="key">Audits</span> — network audits, systems audits, penetration testing basics</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <div class="tc-header"><span class="tc-icon">🏭</span><span class="tc-title">Data Warehousing</span><span class="tc-weight">5%</span></div>
+          <ul class="subtopic-list">
+            <li><span class="key">ETL Process</span> — Extraction, Transformation, Loading steps</li>
+            <li><span class="key">Data Cleaning</span> — handling nulls, duplicates, outliers</li>
+            <li><span class="key">Data Cube</span> — OLAP operations: slice, dice, drill-down, roll-up</li>
+            <li><span class="key">Data Mart</span> — difference from data warehouse, subject-oriented</li>
+            <li><span class="key">Schema Types</span> — Star schema, Snowflake schema, Fact tables, Dimension tables</li>
+            <li><span class="key">Metadata</span> — technical, business, operational metadata</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <div class="tc-header"><span class="tc-icon">🖥️</span><span class="tc-title">Shell Programming</span><span class="tc-weight">5%</span></div>
+          <ul class="subtopic-list">
+            <li><span class="key">Shell Basics</span> — bash scripting, shebang, script execution</li>
+            <li><span class="key">Variables</span> — env variables, local variables, special variables ($0, $1, $#, $?)</li>
+            <li><span class="key">Control Flow</span> — if/elif/else, case statements</li>
+            <li><span class="key">Loops</span> — for, while, until loops; break and continue</li>
+            <li><span class="key">Functions</span> — defining, calling, return values in bash</li>
+            <li><span class="key">UNIX Commands</span> — grep, awk, sed, find, chmod, ps, top, pipe operators</li>
+            <li><span class="key">Script Arguments</span> — positional parameters, getopts</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PHASE II SYLLABUS -->
+    <div id="phase2-syl" class="tab-content">
+      <p style="color:var(--yellow);font-size:12px;margin-bottom:20px;padding:12px 16px;background:rgba(255,209,102,0.06);border:1px solid rgba(255,209,102,0.2);">⚡ Phase II Paper 2 is <strong>180 minutes</strong> of advanced MCQs — logic flow completion, debugging, syntax, program dry runs, and data analysis. Master these 4 domains deeply.</p>
+      <div class="topic-grid">
+
+        <div class="topic-card" style="border-color:var(--green);">
+          <div class="tc-header"><span class="tc-icon">🔄</span><span class="tc-title">Algorithms — Deep Dive</span><span class="tc-weight high">30%</span></div>
+          <ul class="subtopic-list">
+            <li><span class="key">Sorting (implement & trace)</span> — Bubble, Insertion, Selection, Merge, Quick, Heap, Radix, Counting</li>
+            <li><span class="key">Time Complexity</span> — Big-O, Θ, Ω for all sorts; best/avg/worst cases</li>
+            <li><span class="key">Searching</span> — Linear, Binary, Ternary; trace through arrays</li>
+            <li><span class="key">Greedy Algorithms</span> — Activity selection, Huffman coding, Fractional Knapsack</li>
+            <li><span class="key">Dynamic Programming</span> — Fibonacci (memoization/tabulation), LCS, LIS, 0-1 Knapsack, Matrix Chain Multiplication</li>
+            <li><span class="key">Backtracking</span> — N-Queens, Sudoku solver concepts, subset sum</li>
+            <li><span class="key">Divide and Conquer</span> — MergeSort, QuickSort, Binary Search trace</li>
+            <li><span class="key">Pattern Searching</span> — Naïve, KMP algorithm, Rabin-Karp</li>
+          </ul>
+        </div>
+
+        <div class="topic-card" style="border-color:var(--green);">
+          <div class="tc-header"><span class="tc-icon">🌲</span><span class="tc-title">Data Structures — Deep Dive</span><span class="tc-weight high">40%</span></div>
+          <ul class="subtopic-list">
+            <li><span class="key">Arrays</span> — 1D/2D, rotations, prefix sum, sliding window problems</li>
+            <li><span class="key">Linked List</span> — singly, doubly, circular; reverse, detect cycle, merge</li>
+            <li><span class="key">Stack & Queue</span> — array/linked list implementation, stack for expression eval, queue using stacks</li>
+            <li><span class="key">Binary Tree</span> — traversals, height, diameter, LCA, balanced tree check</li>
+            <li><span class="key">Binary Search Tree</span> — insert, delete, search, in-order gives sorted output</li>
+            <li><span class="key">Heap</span> — min-heap, max-heap, heapify, heap sort, priority queue</li>
+            <li><span class="key">Hashing</span> — hash table, collision (chaining, linear probing), load factor</li>
+            <li><span class="key">Matrix & JSON Objects</span> — 2D array operations, JSON parsing/manipulation</li>
+          </ul>
+        </div>
+
+        <div class="topic-card" style="border-color:var(--accent);">
+          <div class="tc-header"><span class="tc-icon">🔤</span><span class="tc-title">String Manipulation</span><span class="tc-weight">10%</span></div>
+          <ul class="subtopic-list">
+            <li><span class="key">Length & Substrings</span> — length(), substring(), charAt(), indexOf(), contains()</li>
+            <li><span class="key">Regex</span> — metacharacters, groups, quantifiers, lookahead; Java Pattern/Matcher, Python re module</li>
+            <li><span class="key">Search Algorithms</span> — find occurrences, KMP, Rabin-Karp</li>
+            <li><span class="key">String Operations</span> — reverse, palindrome check, anagram, permutations</li>
+            <li><span class="key">StringBuilder / StringBuffer</span> — mutability, thread safety in Java</li>
+            <li><span class="key">Common Problems</span> — longest common prefix, word count, Caesar cipher</li>
+          </ul>
+        </div>
+
+        <div class="topic-card" style="border-color:var(--accent);">
+          <div class="tc-header"><span class="tc-icon">🧱</span><span class="tc-title">Object Oriented Programming</span><span class="tc-weight">20%</span></div>
+          <ul class="subtopic-list">
+            <li><span class="key">Abstraction</span> — abstract classes, interfaces, hiding implementation details</li>
+            <li><span class="key">Encapsulation</span> — access modifiers (public/private/protected), getters/setters, data hiding</li>
+            <li><span class="key">Polymorphism</span> — compile-time (method overloading), runtime (method overriding), virtual functions</li>
+            <li><span class="key">Inheritance</span> — single, multiple (interfaces), multilevel, hierarchical; super keyword</li>
+            <li><span class="key">SOLID Principles</span> — Single Responsibility, Open/Closed, Liskov, Interface Segregation, Dependency Inversion</li>
+            <li><span class="key">Design Patterns</span> — Singleton, Factory, Observer, Strategy (conceptual level)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PAPER 1 SYLLABUS -->
+    <div id="paper1-syl" class="tab-content">
+      <div class="topic-grid">
+        <div class="topic-card">
+          <div class="tc-header"><span class="tc-icon">🧮</span><span class="tc-title">Quantitative Aptitude</span><span class="tc-weight">~25%</span></div>
+          <ul class="subtopic-list">
+            <li>Number Systems — LCM, HCF, fractions, simplification</li>
+            <li>Percentage, Profit & Loss, Discount, SI & CI</li>
+            <li>Ratio & Proportion, Partnership, Mixtures & Alligations</li>
+            <li>Time, Speed & Distance — trains, boats</li>
+            <li>Time & Work, Pipes & Cisterns</li>
+            <li>Data Interpretation — tables, bar/pie/line charts</li>
+            <li>Permutations, Combinations & Probability (basics)</li>
+            <li>Mensuration — areas and volumes</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <div class="tc-header"><span class="tc-icon">🧠</span><span class="tc-title">Reasoning Ability</span><span class="tc-weight">~25%</span></div>
+          <ul class="subtopic-list">
+            <li>Puzzles — seating arrangement (linear, circular)</li>
+            <li>Syllogisms — all/some/no type conclusions</li>
+            <li>Coding-Decoding — letter shift, substitution</li>
+            <li>Number Series — missing term, wrong number</li>
+            <li>Blood Relations — family tree problems</li>
+            <li>Direction & Distance — navigation problems</li>
+            <li>Inequalities — symbol-based, coded</li>
+            <li>Input-Output — shift/rearrangement problems</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <div class="tc-header"><span class="tc-icon">📰</span><span class="tc-title">General Awareness</span><span class="tc-weight">~25%</span></div>
+          <ul class="subtopic-list">
+            <li>SEBI — functions, regulations, recent circulars</li>
+            <li>Capital Markets — IPO, FPO, bonds, MF, ETF</li>
+            <li>RBI Monetary Policy — repo/reverse repo, CRR, SLR</li>
+            <li>Budget highlights — key allocations, fiscal deficit</li>
+            <li>Financial Inclusion — Jan Dhan, UPI, digital payments</li>
+            <li>Recent IT/Cyber events — data breaches, new policies</li>
+            <li>International Finance — IMF, World Bank, IOSCO</li>
+            <li>Economy basics — GDP, inflation, current account</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <div class="tc-header"><span class="tc-icon">✍️</span><span class="tc-title">English Language</span><span class="tc-weight">~25%</span></div>
+          <ul class="subtopic-list">
+            <li>Reading Comprehension — inference, tone, vocabulary in context</li>
+            <li>Error Detection — subject-verb agreement, tense, preposition</li>
+            <li>Sentence Rearrangement (Para Jumbles)</li>
+            <li>Cloze Test — fill in blanks with appropriate words</li>
+            <li>Vocabulary — synonyms, antonyms, one-word substitution</li>
+            <li>Sentence Correction — spot the error</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ MIND MAP ══════════ -->
+<section id="mindmap">
+  <div class="container">
+    <div class="sec-label">// section 03</div>
+    <h2 class="sec-title">IT Stream <span class="hl">Mind Map</span></h2>
+    <p class="sec-sub">Full visual of the IT stream exam ecosystem — phases, topics, weightages, and inter-connections</p>
+    <div class="mindmap-container">
+      <svg viewBox="0 0 1000 660" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:700px;">
+        <defs>
+          <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        <!-- CENTER NODE -->
+        <ellipse cx="500" cy="330" rx="78" ry="42" fill="#00d4ff" filter="url(#glow)" opacity="0.9"/>
+        <text x="500" y="323" text-anchor="middle" fill="#050d14" font-family="Syne,sans-serif" font-size="13" font-weight="800">SEBI IT</text>
+        <text x="500" y="339" text-anchor="middle" fill="#050d14" font-family="Syne,sans-serif" font-size="11" font-weight="700">Grade A 2025</text>
+
+        <!-- ── PHASE I branch (upper-left) ── -->
+        <line x1="428" y1="310" x2="260" y2="190" stroke="#ffd166" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.7"/>
+        <rect x="100" y="140" rx="3" width="280" height="110" fill="#0f2030" stroke="#ffd166" stroke-width="1.5"/>
+        <text x="240" y="159" text-anchor="middle" fill="#ffd166" font-family="Syne,sans-serif" font-size="11" font-weight="700">PHASE I — Jan 10, 2026</text>
+        <text x="240" y="175" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9.5">Paper 1: GA+English+QA+Reasoning (60min)</text>
+        <text x="240" y="190" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9.5">Paper 2: IT MCQ — 9 topics (40 min)</text>
+        <text x="240" y="205" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9.5">Cutoff: 30% | 40% | Agg 40%</text>
+        <text x="240" y="220" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9.5">Screening only — marks NOT counted</text>
+        <text x="240" y="237" text-anchor="middle" fill="#5c7a96" font-family="IBM Plex Mono,monospace" font-size="8.5">Neg. marking: ¼ per wrong MCQ</text>
+
+        <!-- ── PHASE II branch (upper-right) ── -->
+        <line x1="572" y1="310" x2="740" y2="190" stroke="#00ff9d" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.7"/>
+        <rect x="620" y="130" rx="3" width="280" height="120" fill="#0f2030" stroke="#00ff9d" stroke-width="1.5"/>
+        <text x="760" y="150" text-anchor="middle" fill="#00ff9d" font-family="Syne,sans-serif" font-size="11" font-weight="700">PHASE II — Feb 21, 2026 ★ MERIT</text>
+        <text x="760" y="167" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9.5">Paper 1: English Descriptive (60 min)</text>
+        <text x="760" y="182" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9.5">Paper 2: Adv IT MCQ (180 min!)</text>
+        <text x="760" y="197" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9.5">Wt: Paper1=1/3, Paper2=2/3</text>
+        <text x="760" y="212" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9.5">Aggregate cutoff: 50%</text>
+        <text x="760" y="228" text-anchor="middle" fill="#00ff9d" font-family="IBM Plex Mono,monospace" font-size="9">4 topics: Algo(30)+DS(40)+String(10)+OOP(20)</text>
+        <text x="760" y="240" text-anchor="middle" fill="#5c7a96" font-family="IBM Plex Mono,monospace" font-size="8.5">Logic flow, debugging, dry runs</text>
+
+        <!-- ── INTERVIEW branch (bottom) ── -->
+        <line x1="500" y1="372" x2="500" y2="480" stroke="#ff8c42" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.7"/>
+        <rect x="340" y="480" rx="3" width="320" height="90" fill="#0f2030" stroke="#ff8c42" stroke-width="1.5"/>
+        <text x="500" y="499" text-anchor="middle" fill="#ff8c42" font-family="Syne,sans-serif" font-size="11" font-weight="700">PHASE III — INTERVIEW</text>
+        <text x="500" y="516" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9.5">Phase II = 85% | Interview = 15%</text>
+        <text x="500" y="531" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9.5">Focus: SEBI + IT in capital markets</text>
+        <text x="500" y="546" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9.5">Cybersecurity in fintech + profile Q&A</text>
+        <text x="500" y="560" text-anchor="middle" fill="#5c7a96" font-family="IBM Plex Mono,monospace" font-size="8.5">Salary: ~₹1,84,000/month (Mumbai)</text>
+
+        <!-- ── IT TOPICS branch (left) ── -->
+        <line x1="424" y1="336" x2="200" y2="380" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.6"/>
+        <rect x="20" y="295" rx="3" width="220" height="180" fill="#0f2030" stroke="#00d4ff" stroke-width="1.2"/>
+        <text x="130" y="314" text-anchor="middle" fill="#00d4ff" font-family="Syne,sans-serif" font-size="11" font-weight="700">PHASE I — IT TOPICS</text>
+        <text x="130" y="330" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9">▸ Database Concepts (10%)</text>
+        <text x="130" y="345" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9">▸ SQL Queries (10%)</text>
+        <text x="130" y="360" text-anchor="middle" fill="#ffd166" font-family="IBM Plex Mono,monospace" font-size="9">▸ Java/C/C++ Programming (30%) ⬆</text>
+        <text x="130" y="375" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9">▸ Python/R Analytics (10%)</text>
+        <text x="130" y="390" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9">▸ Algorithms (10%)</text>
+        <text x="130" y="405" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9">▸ Networking (10%)</text>
+        <text x="130" y="420" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9">▸ Cyber Security (10%)</text>
+        <text x="130" y="435" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9">▸ Data Warehousing (5%)</text>
+        <text x="130" y="450" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9">▸ Shell Programming (5%)</text>
+        <text x="130" y="466" text-anchor="middle" fill="#5c7a96" font-family="IBM Plex Mono,monospace" font-size="8">Total: 100 marks</text>
+
+        <!-- ── PHASE II TOPICS branch (right) ── -->
+        <line x1="576" y1="336" x2="790" y2="390" stroke="#00ff9d" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.6"/>
+        <rect x="760" y="315" rx="3" width="230" height="155" fill="#0f2030" stroke="#00ff9d" stroke-width="1.2"/>
+        <text x="875" y="334" text-anchor="middle" fill="#00ff9d" font-family="Syne,sans-serif" font-size="11" font-weight="700">PHASE II — IT TOPICS</text>
+        <text x="875" y="351" text-anchor="middle" fill="#ffd166" font-family="IBM Plex Mono,monospace" font-size="9">▸ Data Structures (40%) ⬆ HIGHEST</text>
+        <text x="875" y="366" text-anchor="middle" fill="#ffd166" font-family="IBM Plex Mono,monospace" font-size="9">▸ Algorithms (30%) ⬆ HIGH</text>
+        <text x="875" y="381" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9">▸ OOP — Abstraction/Encapsulation/Poly (20%)</text>
+        <text x="875" y="396" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9">▸ String Manipulation (10%)</text>
+        <text x="875" y="414" text-anchor="middle" fill="#5c7a96" font-family="IBM Plex Mono,monospace" font-size="8.5">Format: Code trace, debug, dry-run MCQs</text>
+        <text x="875" y="428" text-anchor="middle" fill="#5c7a96" font-family="IBM Plex Mono,monospace" font-size="8.5">Languages: Java, C, C++, Python</text>
+        <text x="875" y="443" text-anchor="middle" fill="#5c7a96" font-family="IBM Plex Mono,monospace" font-size="8.5">Duration: 180 minutes</text>
+        <text x="875" y="458" text-anchor="middle" fill="#5c7a96" font-family="IBM Plex Mono,monospace" font-size="8.5">Neg marking: ¼ per wrong MCQ</text>
+
+        <!-- ── RESOURCES node (top-center) ── -->
+        <line x1="500" y1="288" x2="500" y2="130" stroke="#ff4d6d" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.6"/>
+        <rect x="350" y="52" rx="3" width="300" height="78" fill="#0f2030" stroke="#ff4d6d" stroke-width="1.2"/>
+        <text x="500" y="71" text-anchor="middle" fill="#ff4d6d" font-family="Syne,sans-serif" font-size="11" font-weight="700">KEY RESOURCES</text>
+        <text x="500" y="87" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9">Books: CLRS, Cormen, Sedgewick, Tanenbaum</text>
+        <text x="500" y="102" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9">Practice: LeetCode, GeeksforGeeks, HackerRank</text>
+        <text x="500" y="117" text-anchor="middle" fill="#7a9bb5" font-family="IBM Plex Mono,monospace" font-size="9">Mocks: Oliveboard, Testbook SEBI IT series</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ IMPORTANT TOPICS ══════════ -->
+<section id="phase1">
+  <div class="container">
+    <div class="sec-label">// section 04</div>
+    <h2 class="sec-title">High-Priority <span class="hl">Topics to Master</span></h2>
+    <p class="sec-sub">Ranked by frequency in previous SEBI IT exams and weightage in the syllabus</p>
+    <div class="hot-topics">
+      <div class="hot-tag"><span class="dot red"></span>OOP — Polymorphism & Inheritance</div>
+      <div class="hot-tag"><span class="dot red"></span>Data Structures — Linked Lists & Trees</div>
+      <div class="hot-tag"><span class="dot red"></span>SQL — Joins & Subqueries</div>
+      <div class="hot-tag"><span class="dot red"></span>Algorithms — Sorting (code trace)</div>
+      <div class="hot-tag"><span class="dot red"></span>Java Exception Handling</div>
+      <div class="hot-tag"><span class="dot yellow"></span>Dynamic Programming — DP table trace</div>
+      <div class="hot-tag"><span class="dot yellow"></span>OSI Model layers & protocols</div>
+      <div class="hot-tag"><span class="dot yellow"></span>Normalization (1NF to BCNF)</div>
+      <div class="hot-tag"><span class="dot yellow"></span>Python Pandas operations</div>
+      <div class="hot-tag"><span class="dot yellow"></span>Graph BFS / DFS traversal</div>
+      <div class="hot-tag"><span class="dot"></span>ACID Properties & Transactions</div>
+      <div class="hot-tag"><span class="dot"></span>Hashing — collision resolution</div>
+      <div class="hot-tag"><span class="dot"></span>CIA Triad & Cyber Attacks</div>
+      <div class="hot-tag"><span class="dot"></span>B-Trees & Indexing</div>
+      <div class="hot-tag"><span class="dot"></span>Shell Scripting — grep, awk, sed</div>
+      <div class="hot-tag"><span class="dot"></span>Star vs Snowflake Schema</div>
+      <div class="hot-tag"><span class="dot"></span>Recursion — dry run problems</div>
+      <div class="hot-tag"><span class="dot"></span>Regex patterns (Python & Java)</div>
+      <div class="hot-tag"><span class="dot"></span>TCP vs UDP, IP addressing</div>
+      <div class="hot-tag"><span class="dot"></span>Binary Tree traversal output</div>
+    </div>
+    <p style="font-size:11px;color:var(--muted);margin-top:16px;"><span style="color:var(--red);">■</span> Very High Priority &nbsp;|&nbsp; <span style="color:var(--yellow);">■</span> High Priority &nbsp;|&nbsp; <span style="color:var(--green);">■</span> Medium Priority</p>
+  </div>
+</section>
+
+<!-- ══════════ SAMPLE QUESTION FORMAT ══════════ -->
+<section id="phase2">
+  <div class="container">
+    <div class="sec-label">// section 05</div>
+    <h2 class="sec-title">Sample <span class="hl">Question Formats</span></h2>
+    <p class="sec-sub">Phase II IT paper heavily tests code tracing, debugging, and dry-run outputs. Practice these question types.</p>
+
+    <div class="sample-q">
+      <div class="sq-label">Code Dry Run — Java</div>
+      <div class="sq-q">What is the output of the following Java code?<br><br><code style="background:var(--bg);padding:10px;display:block;font-size:12px;line-height:1.8;border-left:2px solid var(--accent);">int[] arr = {5, 3, 8, 1, 9};<br>for(int i=0; i&lt;arr.length-1; i++){<br>&nbsp;&nbsp;for(int j=0; j&lt;arr.length-i-1; j++){<br>&nbsp;&nbsp;&nbsp;&nbsp;if(arr[j] &gt; arr[j+1]){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int t=arr[j]; arr[j]=arr[j+1]; arr[j+1]=t;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}<br>System.out.println(arr[2]);</code></div>
+      <div class="sq-opts">
+        <div class="sq-opt">A) 3</div>
+        <div class="sq-opt correct">B) 5 ✓ (bubble sort → [1,3,5,8,9] → index 2 = 5)</div>
+        <div class="sq-opt">C) 8</div>
+        <div class="sq-opt">D) 1</div>
+      </div>
+    </div>
+
+    <div class="sample-q">
+      <div class="sq-label">SQL Query Output</div>
+      <div class="sq-q">Table EMPLOYEE has columns: EmpID, Name, Dept, Salary. Which query returns department-wise average salary only for departments having more than 3 employees?</div>
+      <div class="sq-opts">
+        <div class="sq-opt">A) SELECT Dept, AVG(Salary) FROM EMPLOYEE WHERE COUNT(*) &gt; 3 GROUP BY Dept</div>
+        <div class="sq-opt correct">B) SELECT Dept, AVG(Salary) FROM EMPLOYEE GROUP BY Dept HAVING COUNT(*) &gt; 3 ✓</div>
+        <div class="sq-opt">C) SELECT Dept, AVG(Salary) FROM EMPLOYEE HAVING COUNT(*) &gt; 3</div>
+        <div class="sq-opt">D) SELECT Dept, AVG(Salary) FROM EMPLOYEE GROUP BY Dept WHERE COUNT(*) &gt; 3</div>
+      </div>
+    </div>
+
+    <div class="sample-q">
+      <div class="sq-label">Data Structure — Linked List</div>
+      <div class="sq-q">A singly linked list has nodes: 10 → 20 → 30 → 40 → NULL. After executing: reverse(head), what is the output of printList(head)?</div>
+      <div class="sq-opts">
+        <div class="sq-opt">A) 10 → 20 → 30 → 40</div>
+        <div class="sq-opt correct">B) 40 → 30 → 20 → 10 ✓</div>
+        <div class="sq-opt">C) 40 → 20 → 30 → 10</div>
+        <div class="sq-opt">D) NULL → 10 → 20 → 30 → 40</div>
+      </div>
+    </div>
+
+    <div class="sample-q">
+      <div class="sq-label">Networking Concept</div>
+      <div class="sq-q">Which layer of the OSI model is responsible for end-to-end error detection, flow control, and reliable data transfer between two devices?</div>
+      <div class="sq-opts">
+        <div class="sq-opt">A) Network Layer (Layer 3)</div>
+        <div class="sq-opt correct">B) Transport Layer (Layer 4) ✓ — TCP provides reliable, ordered delivery</div>
+        <div class="sq-opt">C) Data Link Layer (Layer 2)</div>
+        <div class="sq-opt">D) Session Layer (Layer 5)</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ RESOURCES ══════════ -->
+<section id="resources">
+  <div class="container">
+    <div class="sec-label">// section 06</div>
+    <h2 class="sec-title">Books & <span class="hl">Resources</span></h2>
+    <p class="sec-sub">Curated for the SEBI IT exam specifically — maximum signal, minimum noise</p>
+    <div class="res-grid">
+
+      <div class="res-card">
+        <h4>📚 Core CS Textbooks</h4>
+        <ul class="res-list">
+          <li><span class="rt">Introduction to Algorithms — CLRS</span><span class="rs">Cormen et al. — Gold standard for algorithms & DS</span></li>
+          <li><span class="rt">Data Structures & Algorithms — Narasimha Karumanchi</span><span class="rs">Indian author, exam-oriented, very readable</span></li>
+          <li><span class="rt">Computer Networks — Tanenbaum</span><span class="rs">Chapters 1-5 cover OSI, TCP/IP, LAN thoroughly</span></li>
+          <li><span class="rt">Database System Concepts — Silberschatz</span><span class="rs">SQL, normalization, transactions, indexing</span></li>
+          <li><span class="rt">The Java Programming Language — Arnold & Gosling</span><span class="rs">OOP, exceptions, classes, interfaces</span></li>
+          <li><span class="rt">Python for Data Analysis — Wes McKinney</span><span class="rs">Pandas creator's book — DataFrames, groupby, merge</span></li>
+          <li><span class="rt">Cybersecurity Essentials — Cisco Netacad</span><span class="rs">Free online — CIA triad, threats, authentication</span></li>
+        </ul>
+      </div>
+
+      <div class="res-card g">
+        <h4>💻 Online Practice Platforms</h4>
+        <ul class="res-list">
+          <li><span class="rt">LeetCode.com — Easy & Medium problems</span><span class="rs">Focus: Arrays, LinkedList, Trees, DP, Strings</span></li>
+          <li><span class="rt">GeeksforGeeks.org — SEBI IT section</span><span class="rs">Topic-wise articles + MCQs + previous year questions</span></li>
+          <li><span class="rt">HackerRank.com — SQL & Java tracks</span><span class="rs">SQL challenges match Phase I question style closely</span></li>
+          <li><span class="rt">Testbook.com — SEBI IT mock series</span><span class="rs">Full mocks with SEBI-pattern questions</span></li>
+          <li><span class="rt">Oliveboard.in — SEBI IT specific course</span><span class="rs">Previous year papers, sectional tests, live doubt sessions</span></li>
+          <li><span class="rt">W3Schools / TutorialsPoint</span><span class="rs">Quick SQL, Java, Python syntax references</span></li>
+          <li><span class="rt">NPTEL — Data Structures (IIT lectures)</span><span class="rs">Free, rigorous, good for algorithms & DS foundation</span></li>
+        </ul>
+      </div>
+
+      <div class="res-card o">
+        <h4>🎧 YouTube Channels</h4>
+        <ul class="res-list">
+          <li><span class="rt">Abdul Bari — Algorithms</span><span class="rs">Best visual explanations of greedy, DP, graph algorithms</span></li>
+          <li><span class="rt">Kunal Kushwaha — Java DSA</span><span class="rs">Full Java + DSA course, very clear, free</span></li>
+          <li><span class="rt">Neso Academy — Computer Networks</span><span class="rs">OSI, TCP/IP, protocols — structured & complete</span></li>
+          <li><span class="rt">Gate Smashers — DBMS & OS</span><span class="rs">GATE-level depth which covers SEBI IT requirements</span></li>
+          <li><span class="rt">Jenny's Lectures — C/C++</span><span class="rs">Pointers, OOP, recursion explained very clearly</span></li>
+          <li><span class="rt">Tech With Tim — Python & Pandas</span><span class="rs">Practical Python data analytics tutorials</span></li>
+          <li><span class="rt">NetworkChuck — Cybersecurity</span><span class="rs">Engaging practical cybersecurity fundamentals</span></li>
+        </ul>
+      </div>
+
+      <div class="res-card y">
+        <h4>📄 Official & Reference Sources</h4>
+        <ul class="res-list">
+          <li><span class="rt">sebi.gov.in → IT & Cybersecurity circulars</span><span class="rs">SEBI's own guidelines on systems audit, cyber resilience</span></li>
+          <li><span class="rt">CERT-In Guidelines</span><span class="rs">India's cybersecurity directives — important for interview</span></li>
+          <li><span class="rt">SEBI Circular: Cyber Security Framework</span><span class="rs">Read SEBI's cybersecurity framework for market intermediaries</span></li>
+          <li><span class="rt">RBI's IT Framework for NBFC/Banks</span><span class="rs">Background on IT governance in financial sector</span></li>
+          <li><span class="rt">OWASP Top 10 (official website)</span><span class="rs">Web application security risks — common in interview</span></li>
+          <li><span class="rt">Oracle Java Documentation</span><span class="rs">Official API reference for Java standard library</span></li>
+        </ul>
+      </div>
+
+      <div class="res-card">
+        <h4>📝 Practice Books & Guides</h4>
+        <ul class="res-list">
+          <li><span class="rt">SEBI Officer Grade A (IT) — Arihant</span><span class="rs">Previous year papers + topic-wise practice sets</span></li>
+          <li><span class="rt">SEBI Grade A IT Guide — Kiran Prakashan</span><span class="rs">Comprehensive guide with solved papers</span></li>
+          <li><span class="rt">Cracking the Coding Interview — McDowell</span><span class="rs">DS & Algo problems, great for Phase II code tracing</span></li>
+          <li><span class="rt">Elements of Programming Interviews</span><span class="rs">Advanced problems in Java/Python — builds tracing skill</span></li>
+          <li><span class="rt">GATE Computer Science — Made Easy</span><span class="rs">Similar depth as SEBI IT — use for DS, Algo, Networks, DBMS</span></li>
+        </ul>
+      </div>
+
+      <div class="res-card g">
+        <h4>⚡ Quick Reference Sheets</h4>
+        <ul class="res-list">
+          <li><span class="rt">Big-O Cheat Sheet — bigocheatsheet.com</span><span class="rs">All data structure & algorithm complexities in one page</span></li>
+          <li><span class="rt">SQL Joins Visual Guide — sqljoins.com</span><span class="rs">Visual Venn diagrams for all SQL join types</span></li>
+          <li><span class="rt">OSI Model Quick Reference</span><span class="rs">Download a one-page OSI + TCP/IP comparison PDF</span></li>
+          <li><span class="rt">Python Pandas Cheat Sheet — DataCamp</span><span class="rs">All key Pandas operations in condensed format</span></li>
+          <li><span class="rt">Linux Commands Cheat Sheet</span><span class="rs">grep, awk, sed, find, chmod, pipe — shell scripting reference</span></li>
+          <li><span class="rt">Regex Quick Reference</span><span class="rs">Metacharacters, quantifiers, anchors, groups</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STUDY PLAN ══════════ -->
+<section id="plan">
+  <div class="container">
+    <div class="sec-label">// section 07</div>
+    <h2 class="sec-title">Week-by-Week <span class="hl">Study Plan</span></h2>
+    <p class="sec-sub">From application (Oct 30) to Phase II (Feb 21) — 16-week structured plan for IT stream</p>
+    <div class="plan-grid">
+
+      <div class="plan-card">
+        <div class="plan-week">Weeks 1–2 · Oct 30 – Nov 13</div>
+        <div class="plan-title">Foundation — Programming</div>
+        <ul class="plan-list">
+          <li>Revise Java OOP fundamentals (classes, objects, constructors)</li>
+          <li>Practice 20 Java programs — focus on loops, recursion, arrays</li>
+          <li>Cover C/C++ pointers, memory management, functions</li>
+          <li>GeeksforGeeks — Java OOP section top 50 questions</li>
+          <li>Start LeetCode: 5 Easy problems/day (arrays & strings)</li>
+          <li>Target: strong grip on program tracing & output prediction</li>
+        </ul>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-week">Weeks 3–4 · Nov 14 – Nov 28</div>
+        <div class="plan-title">Data Structures Core</div>
+        <ul class="plan-list">
+          <li>Arrays — 1D/2D, rotations, prefix sum problems</li>
+          <li>Linked List — singly/doubly, reverse, detect cycle (dry-run)</li>
+          <li>Stack & Queue — implementation, balanced parens, polish notation</li>
+          <li>Binary Tree — traversals (in/pre/post order), height, LCA</li>
+          <li>BST — insert, delete, search operations step by step</li>
+          <li>LeetCode: 10 Easy + 5 Medium on DS topics this week</li>
+        </ul>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-week">Weeks 5–6 · Dec 1 – Dec 14</div>
+        <div class="plan-title">Algorithms Deep Dive</div>
+        <ul class="plan-list">
+          <li>Sorting: trace through Bubble, Insertion, Merge, Quick by hand</li>
+          <li>Learn all time complexities — tabulate and memorize</li>
+          <li>Greedy: Activity Selection, Huffman (trace step-by-step)</li>
+          <li>DP: Fibonacci, LCS, 0-1 Knapsack — build DP tables manually</li>
+          <li>Graph: BFS/DFS — trace on paper with adjacency matrix</li>
+          <li>Shortest Path: Dijkstra's — step-by-step on sample graph</li>
+        </ul>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-week">Weeks 7–8 · Dec 15 – Dec 28</div>
+        <div class="plan-title">DBMS + SQL + Networking</div>
+        <ul class="plan-list">
+          <li>ER Diagrams — practice converting real-world scenarios to ER</li>
+          <li>Normalization: solve 10 normalization problems (find FDs, find NF)</li>
+          <li>SQL: write 30+ complex queries — joins, subqueries, GROUP BY</li>
+          <li>Transactions: ACID properties, isolation levels, deadlock scenarios</li>
+          <li>B/B+ Trees: insertion and deletion trace on paper</li>
+          <li>OSI Model: list protocols at each layer — memorize firmly</li>
+          <li>TCP/IP: subnetting, IP classes, CIDR problems</li>
+        </ul>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-week">Weeks 9–10 · Dec 29 – Jan 9</div>
+        <div class="plan-title">Phase I Sprint + Remaining Topics</div>
+        <ul class="plan-list">
+          <li>Cybersecurity: CIA triad, attack types, cryptography basics</li>
+          <li>Python: Pandas DataFrames — 20 hands-on exercises</li>
+          <li>Shell Scripting: write basic bash scripts with loops and conditionals</li>
+          <li>Data Warehousing: ETL, star/snowflake schema, OLAP operations</li>
+          <li>3 full Phase I mock tests — analyze all errors</li>
+          <li>Paper 1 (Aptitude): 2 hrs/day on QA + Reasoning + GA</li>
+          <li>Jan 10 — Phase I Exam ✅</li>
+        </ul>
+      </div>
+
+      <div class="plan-card" style="border-color:var(--green);">
+        <div class="plan-week">Weeks 11–12 · Jan 11 – Jan 25</div>
+        <div class="plan-title">Phase II Advanced DS & Algo</div>
+        <ul class="plan-list">
+          <li>Heap: min-heap, max-heap, heapify — trace insertions/deletions</li>
+          <li>Hashing: collision resolution methods — chaining, quadratic probing</li>
+          <li>Matrix operations: 2D array rotation, spiral traversal problems</li>
+          <li>Advanced DP: Matrix Chain Multiplication, LIS, Edit Distance</li>
+          <li>Backtracking: N-Queens trace, subset sum tree</li>
+          <li>Pattern Matching: KMP — failure function derivation</li>
+          <li>LeetCode: 5 Medium DS problems per day</li>
+        </ul>
+      </div>
+
+      <div class="plan-card" style="border-color:var(--green);">
+        <div class="plan-week">Weeks 13–14 · Jan 26 – Feb 8</div>
+        <div class="plan-title">Phase II OOP + String + Code Tracing</div>
+        <ul class="plan-list">
+          <li>OOP: polymorphism deep-dive — overloading vs overriding output questions</li>
+          <li>SOLID principles — write code examples for each</li>
+          <li>String: palindrome, anagram, regex matching programs — trace outputs</li>
+          <li>English Descriptive: write 1 essay + 1 précis daily (financial/tech topics)</li>
+          <li>Start Phase II mock tests — 2 per week; get essays reviewed</li>
+          <li>Essay topics: Cybersecurity in SEBI, AI in capital markets, fintech regulation</li>
+        </ul>
+      </div>
+
+      <div class="plan-card" style="border-color:var(--green);">
+        <div class="plan-week">Weeks 15–16 · Feb 9 – Feb 20</div>
+        <div class="plan-title">Final Revision + Mock Tests</div>
+        <ul class="plan-list">
+          <li>3 full Phase II mock tests — time yourself strictly (180 min Paper 2)</li>
+          <li>Revise all DS + Algo complexity cheat sheet daily</li>
+          <li>Re-do all wrong questions from mock tests</li>
+          <li>English: 1 essay per day; focus on structure and precision</li>
+          <li>SEBI IT-related current affairs: read SEBI cyber circulars</li>
+          <li>Last 3 days: only light revision of notes — no new topics</li>
+          <li>Feb 21 — Phase II Exam ★</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ DAILY SCHEDULE ══════════ -->
+<section>
+  <div class="container">
+    <div class="sec-label">// section 08</div>
+    <h2 class="sec-title">Optimal <span class="hl">Daily Schedule</span></h2>
+    <p class="sec-sub">6.5 hours of focused work — adjust slots to your peak hours</p>
+    <div class="schedule">
+      <div class="sched-block"><div class="sched-time">06:00 – 07:00</div><div class="sched-act">Code Tracing Warm-Up</div><div class="sched-det">2–3 code dry-run problems from prev day's topic. Wake up the analytical brain.</div></div>
+      <div class="sched-block"><div class="sched-time">07:30 – 09:30</div><div class="sched-act">Core IT Concept</div><div class="sched-det">One topic per day (rotation). Textbook study + GeeksforGeeks article. Write key notes.</div></div>
+      <div class="sched-block"><div class="sched-time">10:00 – 11:30</div><div class="sched-act">Coding Practice</div><div class="sched-det">5–7 LeetCode or HackerRank problems on that topic. Focus on Easy then Medium.</div></div>
+      <div class="sched-block"><div class="sched-time">14:00 – 15:30</div><div class="sched-act">MCQ Drill</div><div class="sched-det">50 MCQs from Testbook/Oliveboard on SEBI IT pattern. Time-boxed. Analyze all wrong answers.</div></div>
+      <div class="sched-block"><div class="sched-time">16:00 – 17:00</div><div class="sched-act">Paper 1 Aptitude</div><div class="sched-det">30 min Quantitative Aptitude + 30 min Reasoning. Keep this consistent daily — don't skip.</div></div>
+      <div class="sched-block"><div class="sched-time">20:00 – 21:30</div><div class="sched-act">English + GA + Revision</div><div class="sched-det">30 min essay/précis writing + 30 min current affairs (SEBI/tech news) + 30 min topic revision.</div></div>
+    </div>
+    <div style="margin-top:16px;padding:14px 18px;background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.2);font-size:12px;color:var(--muted);">
+      <strong style="color:var(--accent);">Sunday Rule:</strong> One full mock test (Phase I or II depending on stage) + complete review. No new topics on Sunday — only solving and error analysis.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TIPS ══════════ -->
+<section id="tips">
+  <div class="container">
+    <div class="sec-label">// section 09</div>
+    <h2 class="sec-title">Exam <span class="hl">Strategy & Tips</span></h2>
+    <p class="sec-sub">Specific to Phase II IT paper — where most candidates lose marks</p>
+    <div class="tips-grid">
+      <div class="tip"><div class="tip-n">01</div><h4>Master Code Tracing, Not Just Concepts</h4><p>Phase II tests your ability to mentally execute code and predict output — not just whether you know the concept. Practice tracing at least 10 programs per day with pen and paper.</p></div>
+      <div class="tip"><div class="tip-n">02</div><h4>DS First — 40% of Phase II</h4><p>Data Structures alone carry 40% of Phase II Paper 2. Prioritize: Linked List, Binary Tree, BST, Heap, and Hashing above everything else in the last month.</p></div>
+      <div class="tip"><div class="tip-n">03</div><h4>SQL Query Output Questions</h4><p>Don't just write queries — practice reading a query and mentally determining its output set. Practice with real table data. GROUP BY + HAVING combinations are tested frequently.</p></div>
+      <div class="tip"><div class="tip-n">04</div><h4>Negative Marking = Skip Strategy</h4><p>With ¼ negative marking, skipping an uncertain question is better than guessing randomly. If you can eliminate 2 options, attempt it. Otherwise, skip. Practice this discipline in mocks.</p></div>
+      <div class="tip"><div class="tip-n">05</div><h4>English Descriptive Matters</h4><p>Phase II Paper 1 is 1/3rd of your score. Write one essay daily. Topics rotate around: digital finance, cybersecurity, fintech regulation, SEBI's role in investor protection. Know these well.</p></div>
+      <div class="tip"><div class="tip-n">06</div><h4>Know SEBI's IT Policies for Interview</h4><p>Read SEBI's Cyber Security & Cyber Resilience Framework for MIIs. Know key IT regulations SEBI has issued — algo trading guidelines, data localization, cloud computing in capital markets.</p></div>
+      <div class="tip"><div class="tip-n">07</div><h4>Build a Complexity Cheat Sheet</h4><p>Tabulate time and space complexity for every sorting algorithm, data structure operation, and graph algorithm. Memorize it. This alone answers 8–10 questions directly.</p></div>
+      <div class="tip"><div class="tip-n">08</div><h4>Phase I is Just a Gate — Clear It Efficiently</h4><p>Don't over-prepare for Phase I. It only requires qualifying marks. Put 70% of energy into Phase II preparation from the beginning. Phase I IT paper covers the same topics as Phase II, just less deep.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>SEBI Grade A — Information Technology Stream 2025</strong><br>
+  Official website: sebi.gov.in | Apply: Oct 30 – Nov 28, 2025 | Phase I: Jan 10 | Phase II: Feb 21<br><br>
+  <span style="opacity:0.5;">This guide is based on the official SEBI recruitment advertisement. Always verify details at sebi.gov.in before acting.</span>
+</footer>
+
+<script>
+function switchTab(id, btn, e) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  e.target.classList.add('active');
+}
+</script>
+</body>
+</html>
